@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function TeamMembers() {
-    const [team, setTeam] = useState('Alanna');
+const TeamMembers = (props) => {
+  console.log("Team props: ", props);
+
   return (
     <div>
-        <p>{team}</p>
+      {props.teams.map((team) => (
+        <div key={team.id}>
+          <h2>{team.name}</h2>
+          <p>{team.email}</p>
+          <p>{team.role}</p>
+        </div>
+      ))}
     </div>
   );
 }
