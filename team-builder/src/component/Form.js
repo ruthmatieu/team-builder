@@ -8,7 +8,6 @@ function Form(props) {
         name: '',
         email: '',
         role: '',
-        textarea: ''
     });
 
     const changeHandler = event => {
@@ -28,36 +27,39 @@ function Form(props) {
 
   return (
     <form onSubmit={submitForm}>
-        <label htmlFor="name">Name</label>
-        <input
-            type="text"
-            name="name"
-            value={team.name}
-            onChange={changeHandler}
-        />
-        <label htmlFor="email">E-mail</label>
-        <input
-            type="text"
-            name="email"
-            value={team.email}
-            onChange={changeHandler}
-        />
-        <label htmlFor="role">Position</label>
-        <input
-            type="text"
-            name="role"
-            value={team.role}
-            onChange={changeHandler}
-        />
 
-        <input
-            type="textarea"
-            name="textarea"
-            value={team.textarea}
-            onChange={changeHandler}
-        />
+        <div className="form-info">
+            <label htmlFor="name">Name</label>
+            <input
+                type="text"
+                name="name"
+                value={team.name}
+                onChange={changeHandler}
+            />
+        </div>
 
-        <button type="submit">Add New Teammate</button>
+        <div className="form-info">
+            <label htmlFor="email">E-mail</label>
+            <input
+                type="text"
+                name="email"
+                value={team.email}
+                onChange={changeHandler}
+            />
+        </div>
+
+        <div className="form-info">
+            <label htmlFor="role">Position</label>
+            <input
+                type="text"
+                name="role"
+                value={team.role}
+                onChange={changeHandler}
+            />
+        </div>
+
+
+        <button type="submit">Add Employee</button>
     </form>
   );
 }

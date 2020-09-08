@@ -7,11 +7,10 @@ const TeamMembers = (props) => {
     <div>
       {props.teams.map((team) => (
         
-        <div key={team.id}>
+        <div className="display-employee" key={team.id}>
           <h2>{team.name}</h2>
           <p>{team.email}</p>
           <p>{team.role}</p>
-          <p>{team.textarea}</p>
         </div>
       ))}
     </div>
