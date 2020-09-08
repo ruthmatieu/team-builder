@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 
 function Form(props) {
-    console.log("TeamForm props: ", props);
+
+    // console.log("TeamForm props: ", props);
 
     const [team, setTeam] = useState({
-        name: "Alanna",
-        email: "alanna@gmail.com",
-        role: "sr. software engineer"
+        name: '',
+        email: '',
+        role: '',
+        textarea: ''
     });
 
-    const changeHandler = (e) => {
-        console.log(e.target.value);
-        console.log("team: ", team);
+    const changeHandler = event => {
+        // console.log(e.target.value);
+        // console.log("team: ", team);
         setTeam({
-        // spread operator
-        // e.target :)
         ...team,
-        [e.target.name]: e.target.value
+        [event.target.name]: event.target.value
         });
     };
 
@@ -47,6 +47,13 @@ function Form(props) {
             type="text"
             name="role"
             value={team.role}
+            onChange={changeHandler}
+        />
+
+        <input
+            type="textarea"
+            name="textarea"
+            value={team.textarea}
             onChange={changeHandler}
         />
 
